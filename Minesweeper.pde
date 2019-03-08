@@ -86,7 +86,7 @@ public class MSButton
     }
     // called by manager
     
-    /*public void mousePressed () 
+    public void mousePressed () 
     {
         clicked = true;
         //your code here
@@ -95,11 +95,11 @@ public class MSButton
             if(marked == false)
                 clicked = false;
             else if(bombs.contains(this))
-                System.out.println("Riperoni");//LOSER
+                displayLosingMessage();
             else if(countBombs > 0)
                 
         }
-    }*/
+    }
 
     public void draw () 
     {    
@@ -137,12 +137,12 @@ public class MSButton
             for(int c = col-1; c<=(col+1); c++)
             {
                 if(isValid(r,c)==true){
-                    if(buttons[r][c].c==true)
+                    if(bombs.contains(buttons[r][c])==true)
                         numBombs+=1;
                 }
             }
         }
-        if(grid[row][col] == true)
+        if(bombs.contains(buttons[r][c])!=true)
             numBombs-=1;
 
         return numBombs;
