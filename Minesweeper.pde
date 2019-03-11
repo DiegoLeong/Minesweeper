@@ -51,6 +51,7 @@ public boolean isWon()
 public void displayLosingMessage()
 {
     //your code here
+    System.out.println("Loser");
 }
 public void displayWinningMessage()
 {
@@ -90,14 +91,15 @@ public class MSButton
     {
         clicked = true;
         //your code here
-        if(mousebutton() == RIGHT)
+        if(mouseButton == RIGHT)
         {
             if(marked == false)
                 clicked = false;
             else if(bombs.contains(this))
                 displayLosingMessage();
-            else if(countBombs > 0)
-                
+            else if(countBombs(NUM_ROWS,NUM_COLS) > 0)
+                setLabel(""+countBombs(NUM_ROWS,NUM_COLS));
+            
         }
     }
 
