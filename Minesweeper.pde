@@ -29,19 +29,32 @@ void setup ()
 public void setBombs()
 {
     //your code
-    int row = (int)(Math.random()*NUM_ROWS);
-    int col = (int)(Math.random()*NUM_COLS);
-    if(bombs.contains(buttons[row][col])==false)
-    {
-        bombs.add(buttons[row][col]);
+
+    for (int i = 0; i < 2; i++) {
+
+        int row = (int)(Math.random()*NUM_ROWS);
+        int col = (int)(Math.random()*NUM_COLS);
+        if(bombs.contains(buttons[row][col])==false)
+        {
+            bombs.add(buttons[row][col]);
+        }
+        else {i +=-1;}
     }
 }
 
 public void draw ()
 {
     background( 0 );
+
+    for (int i = 0; i < NUM_ROWS; i++) {
+     for (int j = 0; j < NUM_COLS; j++) {
+        buttons[i][j].draw();
+      } 
+    }
+
     if(isWon())
         displayWinningMessage();
+
 }
 public boolean isWon()
 {
