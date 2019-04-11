@@ -59,8 +59,8 @@ public void draw ()
 public boolean isWon()
 {
     //your code here
-    if(clickedTiles == .countBombs(NUM_ROWS,NUM_COLS) )
-        return true;
+    //if(clickedTiles == .countBombs(NUM_ROWS,NUM_COLS) )
+      //  return true;
     return false;
 }
 public void displayLosingMessage()
@@ -102,7 +102,7 @@ public class MSButton
     public boolean isClicked()
     {
         return clicked;
-        clickedTiles++;
+        //clickedTiles++;
     }
     // called by manager
     
