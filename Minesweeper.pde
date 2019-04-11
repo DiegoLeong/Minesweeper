@@ -4,7 +4,7 @@ public final static int NUM_ROWS = 6;
 public final static int NUM_COLS = 6;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> bombs = new ArrayList <MSButton>(); //ArrayList of just the minesweeper buttons that are mined
-
+int clickedTiles = 0;
 void setup ()
 {
     size(400, 400);
@@ -59,8 +59,8 @@ public void draw ()
 public boolean isWon()
 {
     //your code here
-    //if(bombs.get(0).isClicked() == false)
-        //return true;
+    if(clickedTiles == .countBombs(NUM_ROWS,NUM_COLS) )
+        return true;
     return false;
 }
 public void displayLosingMessage()
@@ -102,6 +102,7 @@ public class MSButton
     public boolean isClicked()
     {
         return clicked;
+        clickedTiles++;
     }
     // called by manager
     
